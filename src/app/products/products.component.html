@@ -1,0 +1,80 @@
+
+<!-- <div id="storeInfo">
+  <h1>{{storeOwn.name}}</h1>
+  <img [src]="storeOwn.logo" alt="Store Logo">
+  <h3 *ngIf="!hasNoDiscount">We offer an explicit discount of {{discount}}</h3>
+</div> -->
+
+
+<!-- <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Categories
+  </button> -->
+  <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
+    <li *ngFor="let item of categories"><a class="dropdown-item" href="#">{{item.name}}</a></li>
+  </ul> -->
+<!-- </div> -->
+
+  <select name="" id="">
+    <option *ngFor="let item of categories" [value]="item.name">{{item.name}}</option>
+  </select>
+<input type="button" value="purchase" (click)="purchase()">
+<h4 *ngIf="itemPurchased">{{purchasedDone}}</h4>
+
+
+<table *ngIf="!itemPurchased" class="table table-hover">
+  <thead class=  "bg-dark text-light">
+    <tr>
+      <td>No.</td>
+      <td>Name</td>
+      <td>Price</td>
+      <td>Quantity</td>
+      <td>Category Name</td>
+      <td>Image</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ngClass="text-dark" *ngFor="let item of productList; let i=index" [style.background-color]="(item.quantity==1)?'yellow':'grey'">
+      <td>{{i+1}}</td>
+      <td>{{item.name}}</td>
+      <td>
+        <div *ngIf="item.quantity > 0; else outOfStock ">{{item.quantity}}</div>
+        <ng-template #outOfStock>Out of stock</ng-template>
+      </td>
+      <td>{{item.price}}</td>
+      <td>{{item.categoryName}}</td>
+      <td><img src="{{item.img}}" alt="product image" id="productImg" appLigtBox  ></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+  <!-- <div class="row">
+      <div class="card" style="width: 18rem;">
+        <img src="assets/watch.jpg" style="height: 10rem; width: 10rem;" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Product title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="assets/watch.jpg" style="height: 10rem; width: 10rem;" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="assets/watch.jpg" style="height: 10rem; width: 10rem;" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div> -->
