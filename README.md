@@ -1,5 +1,8 @@
 # AngularLabs
 
+--- Hey, This is a repo of Angular Labs in ITI - Full-stack .NET/Angular Track day by day. SORRY I DIDN'T PUSH DAY 1 :D
+---
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 
 ## Development server
