@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IProduct } from '../ViewModels/iproduct';
+import { IProduct } from '../Models/iproduct';
 
 @Injectable({
   //When you provide  the service at the root level

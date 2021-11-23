@@ -41,9 +41,19 @@
           <li class="nav-item">
             <a class="nav-link" href="#" routerLink="/User/Editprofile" routerLinkActive="active" [hidden]="!isUserLogged">Edit Profile</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/Dashboard" routerLinkActive="active" [hidden]="!isUserLogged">Dashboard</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/admin/insertproduct" routerLinkActive="active" [hidden]="!isUserLogged">Add Product</a>
+          </li>
+
         </ul>
       </div>
     </div>
   </nav>
   <!-- Navbar -->
 </header>
+

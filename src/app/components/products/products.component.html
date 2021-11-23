@@ -6,25 +6,23 @@
       <td>Name</td>
       <td>Price</td>
       <td>Quantity</td>
-      <td>Category Name</td>
       <td>Image</td>
       <td>Items Count</td>
       <td>Add</td>
     </tr>
   </thead>
   <tbody>
-    <tr ngClass="text-dark" *ngFor="let item of SelectedProductList; let i=index" [style.background-color]="(item.quantity==1)?'yellow':'grey'">
+    <tr ngClass="text-dark" *ngFor="let item of SelectedProductList; let i=index" [style.background-color]="(item.Quantity==1)?'yellow':'grey'">
       <td>{{i+1}}</td>
-      <td>{{item.name}}</td>
+      <td>{{item.Name}}</td>
       <td>
-        <div *ngIf="item.quantity > 0; else outOfStock ">{{item.quantity}}</div>
+        <div *ngIf="item.Quantity > 0; else outOfStock ">{{item.Quantity}}</div>
         <ng-template #outOfStock>Out of stock</ng-template>
       </td>
-      <td>{{item.price}}</td>
-      <td>{{item.categoryName}}</td>
-      <td><img src="{{item.img}}" alt="product image" id="productImg" appLigtBox  ></td>
+      <td>{{item.Price}}</td>
+      <td><img src="{{item.ImgURL}}" alt="product image" id="productImg" appLigtBox  ></td>
       <td><input type="number" class="form-control" #itemCount></td>
-      <td><input type="button" value="Add to Cart" (click)="clacTotalPrice(item.price, itemCount.value)"></td>
+      <td><input type="button" value="Add to Cart" (click)="clacTotalPrice(item.Price, itemCount.value)"></td>
 
     </tr>
   </tbody>

@@ -7,7 +7,7 @@ import { UserLoginService } from 'src/app/services/user-login.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-isUserLogged:boolean = false;
+isUserLogged?:boolean;
   constructor(private userLoginService: UserLoginService) { }
 
   ngOnInit(): void {
@@ -15,7 +15,7 @@ isUserLogged:boolean = false;
       next: (logStatus)=>{
         this.isUserLogged = logStatus;
       }
-    });
+    })
   }
 
 }

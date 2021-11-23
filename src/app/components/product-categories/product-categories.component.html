@@ -3,9 +3,10 @@
 <div id="categoryList" class="mb-3">
   <label for="cat"> Select Category</label>
   <select class="form-control" name="cat" id="cat" [(ngModel)]="selectedCatId">
-    <option *ngFor="let item of categories" [value]="item.id">{{item.name}}</option>
+    <option *ngFor="let item of categories" [value]="item.id">{{item.Name}}</option>
   </select>
 </div>
+
 <div>
   for Test: {{selectedCatId}}
 </div>
@@ -21,4 +22,8 @@
     </span>
   </h3>
 </div>
+
+
+
+
 

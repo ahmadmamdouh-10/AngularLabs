@@ -1,0 +1,79 @@
+<h3 class="text-dark"> Do you want to add a product?</h3>
+<p class="text-dark"> Just fill out the form and Add</p>
+
+<form [formGroup]="createPrdForm" (ngSubmit)="addProduct()">
+<div class="form-group">
+  <input type="text"
+  [ngClass]="{'is-invalid': hasErrors('Name') && isTouched('Name'),
+               'is-valid': !hasErrors('Name') && isTouched('Name') }"
+               class="form-control form-control-lg"
+               formControlName="Name"
+               placeholder="Product Name">
+
+               <div *ngIf="hasError('Name','minlength')
+                        || hasError('Name', 'maxlength')" class="invalid-feedback">
+                        Must be between 10-30 characters
+               </div>
+</div>
+
+<div class="form-group">
+  <input type="number"
+  [ngClass]="{'is-invalid': hasErrors('Price') && isTouched('Price'),
+               'is-valid': !hasErrors('Price') && isTouched('Price') }"
+               class="form-control form-control-lg"
+               formControlName="Price"
+               placeholder="Product Price">
+
+               <div *ngIf="hasError('Price','minlength')
+                        || hasError('Price', 'maxlength')" class="invalid-feedback">
+                        Must be between 10-1000 EGP
+               </div>
+</div>
+
+<div class="form-group">
+  <input type="number"
+  [ngClass]="{'is-invalid': hasErrors('Quantity') && isTouched('Quantity'),
+               'is-valid': !hasErrors('Quantity') && isTouched('Quantity') }"
+               class="form-control form-control-lg"
+               formControlName="Quantity"
+               placeholder="Product Quantity">
+
+               <div *ngIf="hasError('Quantity','minlength')
+                        || hasError('Quantity', 'maxlength')" class="invalid-feedback">
+                        Must be between 10-100 EGP
+               </div>
+</div>
+
+<div class="form-group">
+  <input type="text"
+  [ngClass]="{'is-invalid': hasErrors('ImgURL') && isTouched('ImgURL'),
+               'is-valid': !hasErrors('ImgURL') && isTouched('ImgURL') }"
+               class="form-control form-control-lg"
+               formControlName="ImgURL"
+               placeholder="Product Image URL">
+
+               <div *ngIf="hasError('ImgURL','minlength')
+                        || hasError('ImgURL', 'maxlength')" class="invalid-feedback">
+                        Must be between 10-150 characters
+               </div>
+</div>
+
+
+<div class="form-group">
+  <input type="text"
+  [ngClass]="{'is-invalid': hasErrors('CatName') && isTouched('CatName'),
+               'is-valid': !hasErrors('CatName') && isTouched('CatName') }"
+               class="form-control form-control-lg"
+               formControlName="CatName"
+               placeholder="Product's Category Name">
+
+               <div *ngIf="hasError('CatName','minlength')
+                        || hasError('CatName', 'maxlength')" class="invalid-feedback">
+                        Must be between 5-50 characters
+               </div>
+</div>
+
+
+<button class="btn btn-block mb-3 bg-primary text-light"
+[disabled]="!createPrdForm.valid">Create Product</button>
+</form>

@@ -1,15 +1,16 @@
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" [src]="prd?.img" alt="Card image cap">
+  <img class="card-img-top" [src]="prd?.ImgURL" alt="Card image cap">
   <div class="card-body">
-      <h5 class="card-title">Product Name:{{prd.Id}} - {{prd?.name}}</h5>
+      <h5 class="card-title">Product Name:{{prd.Name}} - {{prd?.Name}}</h5>
       <div class="card-text">
-          <h6>Product Price: {{prd?.price | currency: 'EGP'}}</h6>
-          <h6>Available Quantity: {{prd?.quantity}}</h6>
+          <h6>Product Price: {{prd?.Price | currency: 'EGP'}}</h6>
+          <h6>Available Quantity: {{prd?.Quantity}}</h6>
       </div>
       <hr>
-      <button [disabled]="prd.Id==1" type="button" class="btn btn-primary m-3" (click)="prevProduct()">Previous</button>
-      <button [disabled]="prd.Id == 6" type="button" class="btn btn-primary m-3" (click)="nextProduct()">Next</button>
+      <button [disabled]="prd.id==1" type="button" class="btn btn-primary m-3" (click)="prevProduct()">Previous</button>
+      <button [disabled]="prd.id == 5" type="button" class="btn btn-primary m-3" (click)="nextProduct()">Next</button>
       <hr>
       <button type="button" class="btn btn-primary m-3" (click)="goBack()">Go back</button>
   </div>
 </div>
+

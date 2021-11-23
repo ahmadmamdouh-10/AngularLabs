@@ -1,8 +1,11 @@
 import { Component, OnInit} from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IProduct } from 'src/app/ViewModels/iproduct';
+import { IProduct } from 'src/app/Models/iproduct';
 import { ProductServiceService } from 'src/app/services/product-service.service';
+import { ProductsFrmAPIService } from 'src/app/services/products-frm-api.service';
+import { Observable } from 'rxjs';
+import { IProductfrmAPI } from 'src/app/Models/iproductfrm-api';
 
 
 @Component({
@@ -13,11 +16,11 @@ import { ProductServiceService } from 'src/app/services/product-service.service'
 export class ProductDetailsComponent implements OnInit {
 
   sentprdID: number=0;
-  prd:IProduct={} as IProduct;
+  prd: IProductfrmAPI={} as IProductfrmAPI;
 
   constructor(
     private activatedRouter: ActivatedRoute
-  , private prdService: ProductServiceService
+  , private prdService: ProductsFrmAPIService
   , private router: Router
   , private location:Location
   ) { }
@@ -25,7 +28,10 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRouter.paramMap.subscribe(params=>{
       this.sentprdID=Number(params.get("pID"));
-      this.prd = this.prdService.getProductByID(this.sentprdID);
+      this.prdService.getProductByID(this.sentprdID)
+      .subscribe((res: IProductfrmAPI)=>{
+        this.prd = res;
+      });
     })
   }
 

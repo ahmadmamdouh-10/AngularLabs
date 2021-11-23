@@ -19,7 +19,7 @@ const routes:Routes=[
   declarations: [
     ViewProfileComponent,
     EditProfileComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     CommonModule,

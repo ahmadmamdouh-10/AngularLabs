@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductServiceService } from 'src/app/services/product-service.service';
-import { IProduct } from 'src/app/ViewModels/iproduct';
+import { IProduct } from 'src/app/Models/iproduct';
 
 @Component({
   selector: 'app-product-cards',

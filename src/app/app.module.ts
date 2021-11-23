@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
-import { FormsModule } from '@angular/forms';
 import { LigtBoxDirective } from './directives/ligt-box.directive';
 import { ProductCardsDirective } from './directives/product-cards.directive';
 import { EgyNationalIdPipe } from './pipes/egy-national-id.pipe';
@@ -19,6 +19,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { PrdFrmAPIComponent } from './components/prd-frm-api/prd-frm-api.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AddProductComponent } from './components/add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -38,11 +41,15 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     AboutComponent,
     NotFoundComponent,
     ProductDetailsComponent,
+    PrdFrmAPIComponent,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

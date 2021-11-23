@@ -7,7 +7,7 @@ import { UserLoginService } from 'src/app/services/user-login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-isUserLogged:boolean=false;
+isUserLogged?:boolean;
   constructor(
     private userLoginService: UserLoginService
   ) { }
