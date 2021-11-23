@@ -11,10 +11,11 @@ export class ProductCardsDirective implements OnChanges{
     this.elem.nativeElement.style =
     `
     color: white;
-    background-color:${this.bgColor};
+    background-color:black;
 
     `;
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     this.elem.nativeElement.style =
     `
@@ -23,9 +24,6 @@ export class ProductCardsDirective implements OnChanges{
 
     `;
   }
-
-
-
 
   @HostListener('mouseover') onMouseOver(){
     this.elem.nativeElement.style =

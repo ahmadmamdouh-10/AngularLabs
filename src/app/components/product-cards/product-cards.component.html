@@ -1,0 +1,24 @@
+
+<div id="nationalId">
+  <h4  *ngIf="itemPurchased">{{purchasedDone}}</h4>
+  <h5>National ID: {{nationalId|egyNationalId}}</h5>
+  <h5>Credit Card: {{creditCard|creditCardFormat}}</h5>
+</div>
+
+<div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;" >
+  <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+      <div *ngFor="let item of productList" class="col">
+          <div appProductCards  bgColor='black' class="card h-100 shadow-sm"> <img src="{{item.img}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <div class="clearfix mb-3"> <span class="float-start badge rounded-pill bg-primary">{{item.categoryName}}</span> <span class="float-end price-hp">{{item.price|currency:'EGP'}}</span> </div>
+                  <div><span class="float-end price-hp bg-warning">{{item.purchaseDate|date}}</span></div>
+                  <h5 class="card-title">{{item.name}}</h5>
+                  <h6 class="card-title" > Check this Product, only  {{item.quantity}} piece/pieces remain!</h6>
+                  <div class="d-grid gap-2 my-4"> <a href="#" class="btn btn-warning" (click)="purchase()">Buy</a> </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,24 @@
+
+<h2>Make Your Order:</h2>
+<div id="categoryList" class="mb-3">
+  <label for="cat"> Select Category</label>
+  <select class="form-control" name="cat" id="cat" [(ngModel)]="selectedCatId">
+    <option *ngFor="let item of categories" [value]="item.id">{{item.name}}</option>
+  </select>
+</div>
+<div>
+  for Test: {{selectedCatId}}
+</div>
+
+<div class="bg-warning">
+  <app-products  [sentSelectedCategoryID]="selectedCatId" (oderTotalPriceChanged)="onOrderTotalPriceChanged($event)"></app-products>
+</div>
+<br><br><br>
+<div>
+  <h3>
+    <span>
+      Order Total Price from nested Component to master component: {{receivedOrderTotalPrice|currency:'$'}}
+    </span>
+  </h3>
+</div>
+

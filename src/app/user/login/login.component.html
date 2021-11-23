@@ -1,0 +1,4 @@
+<div class="login">
+  <button type="button" [disabled]="isUserLogged" class="btn btn-primary m-3" (click)="login()">Login</button>
+  <button type="button" [disabled]="!isUserLogged" class="btn btn-primary m-3" (click)="logout()">Logout</button>
+</div>

@@ -1,0 +1,72 @@
+
+<table *ngIf="!itemPurchased" class="table table-hover">
+  <thead class=  "bg-dark text-light">
+    <tr>
+      <td>No.</td>
+      <td>Name</td>
+      <td>Price</td>
+      <td>Quantity</td>
+      <td>Category Name</td>
+      <td>Image</td>
+      <td>Items Count</td>
+      <td>Add</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ngClass="text-dark" *ngFor="let item of SelectedProductList; let i=index" [style.background-color]="(item.quantity==1)?'yellow':'grey'">
+      <td>{{i+1}}</td>
+      <td>{{item.name}}</td>
+      <td>
+        <div *ngIf="item.quantity > 0; else outOfStock ">{{item.quantity}}</div>
+        <ng-template #outOfStock>Out of stock</ng-template>
+      </td>
+      <td>{{item.price}}</td>
+      <td>{{item.categoryName}}</td>
+      <td><img src="{{item.img}}" alt="product image" id="productImg" appLigtBox  ></td>
+      <td><input type="number" class="form-control" #itemCount></td>
+      <td><input type="button" value="Add to Cart" (click)="clacTotalPrice(item.price, itemCount.value)"></td>
+
+    </tr>
+  </tbody>
+</table>
+<div>
+  for test: Order Total Price in nested Component {{orderTotalPrice}}
+</div>
+
+<!-- <br>
+<div style="text-align: center;">
+  <input class="bg-warning" type="button" value="purchase" (click)="purchase()">
+<h4 *ngIf="itemPurchased">{{purchasedDone}}</h4>
+
+</div> -->
+
+
+
+  <!-- <div class="row">
+      <div class="card" style="width: 18rem;">
+        <img src="assets/watch.jpg" style="height: 10rem; width: 10rem;" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Product title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="assets/watch.jpg" style="height: 10rem; width: 10rem;" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="assets/watch.jpg" style="height: 10rem; width: 10rem;" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div> -->
